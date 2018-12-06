@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginMVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="550">
+    <Grid  Background="LightGray">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Log in" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" Margin="5" FontSize="20"/>
+            <TextBlock Text="UserName:" Grid.Row="1" Margin="3"/>
+            <TextBox x:Name="txtUserName" Text="{Binding UserName}" Grid.Row="1" Grid.Column="1" Margin="3" MinWidth="200" HorizontalAlignment="Left" />
+            <TextBlock Text="Password:" Grid.Row="2" Margin="3"/>
+            <TextBox x:Name="txtPassword" Text="{Binding Password}" Grid.Column="1" Grid.Row="2" Margin="3" MinWidth="200" HorizontalAlignment="Left" />
+            <Button Command="{Binding LoginCommand}" Content="Sign in" Grid.Row="3" Grid.Column="1" Margin="3" />
+            <TextBlock Text="UserName : Admin, Password : Demo123 (case sensative)" Grid.ColumnSpan="2" Grid.Row="4" Margin="0, 15"/>
+        </Grid>
     </Grid>
 </Window>
